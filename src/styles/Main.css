@@ -1,0 +1,18 @@
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.subtitulo {
+  margin: 10px 0 20px;
+}
+
+.produtos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

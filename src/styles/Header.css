@@ -1,0 +1,22 @@
+.site-header {
+  padding: 1rem 2rem;
+  background-color: #1f2937;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
