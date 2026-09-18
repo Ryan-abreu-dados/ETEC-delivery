@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Login from './componentes/Login'
-import Inicio from './componentes/Inicio'
+import Home from './pages/Home'
+import Carrinho from './pages/Carrinho'
 import Dashboard from './pages/Dashboard'
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
     <Routes>
       <Route path="/login" element={estaLogado ? <Navigate to="/" /> : <Login aoEntrar={entrar} />} />
       <Route path="/dashboard" element={estaLogado ? <Dashboard /> : <Navigate to="/login" />} />
-      <Route path="/" element={estaLogado ? <Inicio email={email} aoSair={() => { sessionStorage.clear(); setEstaLogado(false) }} /> : <Navigate to="/login" />} />
+      <Route path="/carrinho" element={estaLogado ? <Carrinho /> : <Navigate to="/login" />} />
+      <Route path="/" element={estaLogado ? <Home email={email} aoSair={() => { sessionStorage.clear(); setEstaLogado(false) }} /> : <Navigate to="/login" />} />
       <Route path="*" element={<Navigate to={estaLogado ? '/' : '/login'} />} />
     </Routes>
   </BrowserRouter>
