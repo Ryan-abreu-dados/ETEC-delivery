@@ -1,20 +1,7 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #1f2937;
-  background-color: #f8fafc;
-}
-
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-}
-
-section {
-  margin-top: 3rem;
-}
+:root { font-family: 'DM Sans', sans-serif; color: #161616; background: #f5f1eb; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button, a { cursor: pointer; }
