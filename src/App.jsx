@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import Login from './componentes/Login'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import Carrinho from './pages/Carrinho'
 import Dashboard from './pages/Dashboard'

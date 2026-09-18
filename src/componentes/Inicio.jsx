@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import Botao from './Botao'
 import imagemPizza from '../assets/pizza-pao-manteiga.png'
-import imagemCha from '../assets/cha.jpg'
 import { useCarrinho } from '../hooks/useCarrinho'
 import { useProdutos } from '../hooks/useProdutos'
 
 const produtosLocais = [
   { id: 'pizza', nome: 'Pizza de pao com manteiga', descricao: 'Quentinha, cremosa e feita na hora.', preco: 55, imagem: imagemPizza },
-  { id: 'cha', nome: 'Cha gelado da casa', descricao: 'Refrescante e perfeito para acompanhar.', preco: 7.5, imagem: imagemCha },
 ]
 
 function Inicio({ email, aoSair }) {
@@ -17,7 +15,8 @@ function Inicio({ email, aoSair }) {
   const idLoja = usuario.id_loja || usuario.loja_id || usuario.loja?.id_loja || import.meta.env.VITE_LOJA_ID
   const { produtos: produtosApi, carregando, erro } = useProdutos(idLoja)
   const { carrinho, adicionarAoCarrinho, removerDoCarrinho } = useCarrinho()
-  const produtos = produtosApi.length ? produtosApi : produtosLocais
+  const pizzaDaApi = produtosApi.find((produto) => produto.nome.toLowerCase().includes('manteiga'))
+  const produtos = pizzaDaApi ? [pizzaDaApi] : produtosLocais
   const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0)
   const total = carrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0)
 
